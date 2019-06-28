@@ -11,8 +11,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="207dp"
-        android:textAppearance="?android:attr:/textAppearanceLarge"
-        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView"
         android:background="#ffffff"
         android:layout_margin="0dp"
@@ -35,6 +34,7 @@
         android:background="#4d4d4d"
         android:onClick="onClickNumber"
         android:maxWidth="90dp"/>
+
     <Button
         android:layout_width="90dp"
         android:layout_height="90dp"
@@ -43,20 +43,6 @@
         android:layout_below="@+id/textView"
         android:layout_toRightOf="@+id/btn7"
         android:layout_toEndOf="@+id/btn7"
-        android:textColor="#ffffff"
-        android:textSize="30sp"
-        android:background="#4d4d4d"
-        android:onClick="onClickNumber"
-        android:maxWidth="90dp"/>
-
-    <Button
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:text="9"
-        android:id="@+id/btn9"
-        android:layout_below="@+id/textView"
-        android:layout_toRightOf="@+id/btn8"
-        android:layout_toEndOf="@+id/btn8"
         android:textColor="#ffffff"
         android:textSize="30sp"
         android:background="#4d4d4d"
@@ -98,19 +84,6 @@
         android:layout_below="@+id/btn8"
         android:layout_toRightOf="@+id/btn7"
         android:layout_toEndOf="@+id/btn7"
-        android:textColor="#ffffff"
-        android:textSize="30sp"
-        android:background="#4d4d4d"
-        android:onClick="onClickNumber"/>
-
-    <Button
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:text="4"
-        android:id="@+id/btn4"
-        android:layout_below="@+id/btn9"
-        android:layout_toLeftOf="@+id/btn5"
-        android:layout_toStartOf="@+id/btn5"
         android:textColor="#ffffff"
         android:textSize="30sp"
         android:background="#4d4d4d"
