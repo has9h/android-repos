@@ -47,11 +47,17 @@ public class Weather extends AsyncTask<String, Void, String> {
 
             JSONObject myObject = new JSONObject(result);
             JSONObject main = new JSONObject(myObject.getString("main"));
+            JSONObject sys = new JSONObject(myObject.getString("sys"));
+            JSONObject weather = new JSONObject(myObject.getString("weather"));
             String temperature = main.getString("temp");
+            String country = sys.getString("country");
+            String description = weather.getString("description");
             String placeName = myObject.getString("name");
 
-            MainActivity.place.setText(placeName);
+
+            MainActivity.place.setText(placeName + ", " + country);
             MainActivity.temp.setText(temperature);
+            MainActivity.descr.setText(description);
         }catch (JSONException e){
             e.printStackTrace();
         }

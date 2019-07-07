@@ -4,19 +4,106 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2196F3"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
         android:id="@+id/place"
-        android:textAlignment="center"/>
+        android:textAlignment="gravity"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:textSize="25dp"
+        android:textColor="#FFFFFF"
+        android:text="AA"/>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/place"
         android:id="@+id/temp"
-        android:textAlignment="center"/>
+        android:textAlignment="gravity"
+        android:paddingLeft="15dp"
+        android:textSize="40dp"
+        android:textColor="#FFFFFF"
+        android:text="AA"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/temp"
+        android:id="@+id/descr"
+        android:textAlignment="gravity"
+        android:paddingLeft="15dp"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:paddingBottom="10dp"
+        android:text="AAV"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/wind"
+        android:layout_below="@+id/descr"
+        android:textAlignment="gravity"
+        android:paddingLeft="15dp"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:text="AAV"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pressure"
+        android:layout_below="@+id/wind"
+        android:textAlignment="gravity"
+        android:paddingLeft="15dp"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:text="AAV"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/humid"
+        android:layout_below="@+id/pressure"
+        android:textAlignment="gravity"
+        android:paddingLeft="15dp"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:text="AAV"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sunrise"
+        android:layout_below="@+id/humid"
+        android:textAlignment="gravity"
+        android:paddingLeft="15dp"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:text="AAV"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sunset"
+        android:layout_below="@+id/sunrise"
+        android:textAlignment="gravity"
+        android:paddingLeft="15dp"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF"
+        android:paddingBottom="20dp"
+        android:text="AAV"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/sunset"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:background="#FAFAFA"
+        android:textColor="@color/colorPrimaryDark"/>
 
 </RelativeLayout>
