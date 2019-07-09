@@ -3,6 +3,7 @@ package com.example.openweather;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -10,6 +11,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Weather extends AsyncTask<String, Void, String> {
     String result;
@@ -48,18 +51,59 @@ public class Weather extends AsyncTask<String, Void, String> {
             JSONObject myObject = new JSONObject(result);
             JSONObject main = new JSONObject(myObject.getString("main"));
             JSONObject sys = new JSONObject(myObject.getString("sys"));
-            JSONObject weather = new JSONObject(myObject.getString("weather"));
+            JSONArray weather = myObject.getJSONArray("weather");
+            JSONObject zeroInd = weather.getJSONObject(0);
+            JSONObject wind = new JSONObject(myObject.getString("wind"));
+
             String temperature = main.getString("temp");
             String country = sys.getString("country");
-            String description = weather.getString("description");
+            String description = zeroInd.getString("description");
             String placeName = myObject.getString("name");
+            String speed = wind.getString("speed");
+            String pressure = main.getString("pressure");
+            String humid = main.getString("humidity");
+            String sunrise = sys.getString("sunrise");
+            String sunset = sys.getString("sunset");
 
+            changeIcons(temperature);
 
             MainActivity.place.setText(placeName + ", " + country);
-            MainActivity.temp.setText(temperature);
-            MainActivity.descr.setText(description);
+            MainActivity.temp.setText(temperature + " ℃");
+            MainActivity.descr.setText(Character.toUpperCase(description.charAt(0)) + description.substring(1));
+            MainActivity.wind.setText("Wind: " + speed + " m/s");
+            MainActivity.pressure.setText("Pressure: " + pressure + " hPa");
+            MainActivity.humid.setText("Humidity: " + humid + "%");
+
+            //Time
+            long unixSecondsRise = Integer.parseInt(sunrise);
+            long unixSecondsSet = Integer.parseInt(sunset);
+
+            MainActivity.sunrise.setText("Sunrise: " + setDate(unixSecondsRise));
+            MainActivity.sunset.setText("Sunset: " + setDate(unixSecondsSet));
         }catch (JSONException e){
             e.printStackTrace();
+        }
+    }
+
+    public String setDate(long unixSeconds){
+        Date date = new java.util.Date(unixSeconds * 1000L);
+
+        SimpleDateFormat sdf = new java.text.SimpleDateFormat("h:mm a");
+        sdf.setTimeZone(java.util.TimeZone.getTimeZone("GMT+6"));
+        String formattedDate = sdf.format(date);
+
+        return formattedDate;
+    }
+
+    public void changeIcons(String temperature){
+        switch (temperature){
+            case "Haze":
+                break;
+            case "Clear":
+                break;
+            case "Clouds":
+                break;
+
         }
     }
 }

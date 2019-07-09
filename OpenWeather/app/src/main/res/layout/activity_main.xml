@@ -8,102 +8,122 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/place"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        android:id="@+id/place"
-        android:textAlignment="gravity"
+        android:fontFamily="@font/roboto"
         android:paddingLeft="15dp"
         android:paddingTop="15dp"
-        android:textSize="25dp"
+        android:textAlignment="gravity"
         android:textColor="#FFFFFF"
-        android:text="AA"/>
+        android:textSize="25dp" />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/place"
+        android:fontFamily="@font/roboto"
         android:id="@+id/temp"
         android:textAlignment="gravity"
         android:paddingLeft="15dp"
         android:textSize="40dp"
-        android:textColor="#FFFFFF"
-        android:text="AA"/>
+        android:textColor="#FFFFFF"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/temp"
+        android:fontFamily="@font/roboto"
         android:id="@+id/descr"
         android:textAlignment="gravity"
         android:paddingLeft="15dp"
         android:textSize="20dp"
         android:textColor="#FFFFFF"
-        android:paddingBottom="10dp"
-        android:text="AAV"/>
+        android:paddingBottom="10dp"/>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/wind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
         android:layout_below="@+id/descr"
-        android:textAlignment="gravity"
         android:paddingLeft="15dp"
-        android:textSize="20dp"
+        android:textAlignment="gravity"
         android:textColor="#FFFFFF"
-        android:text="AAV"/>
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
         android:id="@+id/pressure"
         android:layout_below="@+id/wind"
         android:textAlignment="gravity"
         android:paddingLeft="15dp"
         android:textSize="20dp"
-        android:textColor="#FFFFFF"
-        android:text="AAV"/>
+        android:textColor="#FFFFFF"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
         android:id="@+id/humid"
         android:layout_below="@+id/pressure"
         android:textAlignment="gravity"
         android:paddingLeft="15dp"
         android:textSize="20dp"
-        android:textColor="#FFFFFF"
-        android:text="AAV"/>
+        android:textColor="#FFFFFF"/>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/sunrise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
         android:layout_below="@+id/humid"
-        android:textAlignment="gravity"
         android:paddingLeft="15dp"
-        android:textSize="20dp"
+        android:textAlignment="gravity"
         android:textColor="#FFFFFF"
-        android:text="AAV"/>
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
         android:id="@+id/sunset"
         android:layout_below="@+id/sunrise"
         android:textAlignment="gravity"
         android:paddingLeft="15dp"
         android:textSize="20dp"
         android:textColor="#FFFFFF"
-        android:paddingBottom="20dp"
-        android:text="AAV"/>
+        android:paddingBottom="20dp"/>
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="200dp"
         android:layout_below="@+id/sunset"
+        android:id="@+id/forecast"
+        android:fontFamily="@font/roboto"
         android:textAlignment="center"
         android:textSize="30dp"
-        android:background="#FAFAFA"
+        android:background="#E8E8E8"
         android:textColor="@color/colorPrimaryDark"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/forecast"
+        android:id="@+id/future"
+        android:fontFamily="@font/roboto"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:background="#E8E8E8"
+        android:textColor="@color/colorPrimaryDark"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/place"
+        android:layout_toEndOf="@+id/temp"
+        android:src="@drawable/cloudy"/>
 
 </RelativeLayout>
