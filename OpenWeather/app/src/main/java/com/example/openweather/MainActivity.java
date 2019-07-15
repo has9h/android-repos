@@ -2,7 +2,8 @@ package com.example.openweather;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
+import android.text.Layout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,8 +15,7 @@ public class MainActivity extends AppCompatActivity {
     static TextView humid;
     static TextView sunrise;
     static TextView sunset;
-
-    ImageView icon;
+    static TextView iconStat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +30,10 @@ public class MainActivity extends AppCompatActivity {
         humid = (TextView) findViewById(R.id.humid);
         sunrise = (TextView) findViewById(R.id.sunrise);
         sunset = (TextView) findViewById(R.id.sunset);
-
+        iconStat = (TextView) findViewById(R.id.iconFont);
+        RelativeLayout relLayout = (RelativeLayout) findViewById(R.id.layout);
 
         Weather getData = new  Weather();
-        getData.execute("http://api.openweathermap.org/data/2.5/" + "weather?q=Dhaka,bd&appid=4405af8824d94dcf3c82c0530ae45962&units=metric");
+        getData.execute("http://api.openweathermap.org/data/2.5/" + "weather?q=Ecuador&appid=4405af8824d94dcf3c82c0530ae45962&units=metric");
     }
 }

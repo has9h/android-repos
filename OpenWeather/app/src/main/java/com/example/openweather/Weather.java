@@ -2,6 +2,7 @@ package com.example.openweather;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.RelativeLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -65,14 +66,13 @@ public class Weather extends AsyncTask<String, Void, String> {
             String sunrise = sys.getString("sunrise");
             String sunset = sys.getString("sunset");
 
-            changeIcons(temperature);
-
             MainActivity.place.setText(placeName + ", " + country);
             MainActivity.temp.setText(temperature + " ℃");
             MainActivity.descr.setText(Character.toUpperCase(description.charAt(0)) + description.substring(1));
             MainActivity.wind.setText("Wind: " + speed + " m/s");
             MainActivity.pressure.setText("Pressure: " + pressure + " hPa");
             MainActivity.humid.setText("Humidity: " + humid + "%");
+            MainActivity.iconStat.setText(changeIcons(description));
 
             //Time
             long unixSecondsRise = Integer.parseInt(sunrise);
@@ -95,15 +95,32 @@ public class Weather extends AsyncTask<String, Void, String> {
         return formattedDate;
     }
 
-    public void changeIcons(String temperature){
+    public String changeIcons(String temperature){
+        String status = null;
         switch (temperature){
-            case "Haze":
+            case "haze":
+                status = "Z";
                 break;
-            case "Clear":
+            case "few clouds":
+                status = "a";
                 break;
-            case "Clouds":
+            case "overcast clouds":
+                status = "3";
+                break;
+            case "moderate rain":
+                status = "K";
+                break;
+            case "light rain":
+                status = "M";
+                break;
+            case "broken clouds":
+                status = "A";
+                break;
+            case "scattered clouds":
+                status = "2";
                 break;
 
         }
+        return status;
     }
 }
