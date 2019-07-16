@@ -105,7 +105,7 @@ public class Weather extends AsyncTask<String, Void, String> {
                 break;
             case "few clouds":
                 status = "a";
-//                MainActivity.backGroundColor = Color.LTGRAY;
+                MainActivity.backGroundColor = Color.parseColor("#cce0e6");
                 break;
             case "overcast clouds":
                 status = "3";
@@ -116,9 +116,11 @@ public class Weather extends AsyncTask<String, Void, String> {
                 break;
             case "light rain":
                 status = "M";
+                MainActivity.backGroundColor = Color.parseColor("#b5dce8");
                 break;
             case "broken clouds":
                 status = "A";
+                MainActivity.backGroundColor = Color.parseColor("#e8dab5");
                 break;
             case "scattered clouds":
                 status = "2";

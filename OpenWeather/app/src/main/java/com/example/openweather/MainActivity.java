@@ -39,6 +39,6 @@ public class MainActivity extends AppCompatActivity {
         relLayout.setBackgroundColor(backGroundColor);
 
         Weather getData = new  Weather();
-        getData.execute("http://api.openweathermap.org/data/2.5/" + "weather?q=Dhaka&appid=4405af8824d94dcf3c82c0530ae45962&units=metric");
+        getData.execute("http://api.openweathermap.org/data/2.5/" + "weather?q=Ecuador&appid=4405af8824d94dcf3c82c0530ae45962&units=metric");
     }
 }
