@@ -1,5 +1,6 @@
 package com.example.openweather;
 
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.RelativeLayout;
@@ -100,15 +101,18 @@ public class Weather extends AsyncTask<String, Void, String> {
         switch (temperature){
             case "haze":
                 status = "Z";
+                MainActivity.backGroundColor = Color.parseColor("#828282");
                 break;
             case "few clouds":
                 status = "a";
+//                MainActivity.backGroundColor = Color.LTGRAY;
                 break;
             case "overcast clouds":
                 status = "3";
                 break;
             case "moderate rain":
                 status = "K";
+//                MainActivity.backGroundColor = Color.BLUE;
                 break;
             case "light rain":
                 status = "M";
@@ -118,8 +122,12 @@ public class Weather extends AsyncTask<String, Void, String> {
                 break;
             case "scattered clouds":
                 status = "2";
+                MainActivity.backGroundColor = Color.parseColor("#a4a4ba");
                 break;
-
+            case "clear sky":
+                status = "1";
+//                MainActivity.backGroundColor = Color.BLUE;
+                break;
         }
         return status;
     }
